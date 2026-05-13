@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNI 會員紅綠燈查詢</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>BNI 會員紅綠燈查詢</h1>
+  </header>
+
+  <main>
+    <section id="login-section" class="screen active">
+      <div class="login-card">
+        <h2>會員查詢</h2>
+        <p>輸入會員編號，例如 001</p>
+        <input id="member-input" type="text" inputmode="numeric" maxlength="3" autocomplete="off" placeholder="001">
+        <div id="member-preview" class="member-preview hidden"></div>
+        <button id="lookup-btn" disabled>查詢</button>
+        <div id="login-loading" class="status">載入會員名單中...</div>
+        <div id="login-error" class="error hidden"></div>
+      </div>
+    </section>
+
+    <section id="dashboard-section" class="screen hidden">
+      <div class="dashboard-header">
+        <button id="back-btn">返回</button>
+        <h2 id="member-name"></h2>
+      </div>
+
+      <div id="data-notice" class="notice hidden"></div>
+
+      <section class="score-panel">
+        <div class="traffic-light" aria-label="紅綠燈狀態">
+          <span class="light green" data-level="green"></span>
+          <span class="light yellow" data-level="yellow"></span>
+          <span class="light red" data-level="red"></span>
+          <span class="light black" data-level="black"></span>
+        </div>
+        <div class="score-block">
+          <div id="total-score" class="score-number">0</div>
+          <div id="score-label" class="score-label">-</div>
+        </div>
+      </section>
+
+      <h3>目前各指標得分</h3>
+      <div id="metric-cards" class="metric-grid"></div>
+
+      <section class="chart-panel">
+        <h3>月度趨勢</h3>
+        <canvas id="trend-chart"></canvas>
+      </section>
+
+      <section class="chart-panel">
+        <h3>評分組成</h3>
+        <canvas id="score-chart"></canvas>
+      </section>
+
+      <section id="green-congrats" class="congrats hidden">
+        <h3>恭喜達到綠燈</h3>
+        <p>請持續維持目前的表現。</p>
+      </section>
+
+      <section id="action-plan" class="action-plan hidden">
+        <h3 id="action-plan-title">行動計劃</h3>
+        <p id="action-gap"></p>
+        <div id="action-list"></div>
+      </section>
+
+      <div id="dashboard-loading" class="overlay hidden">
+        <div class="spinner"></div>
+        <span id="loading-text">載入資料中...</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
