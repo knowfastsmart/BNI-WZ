@@ -1,5 +1,5 @@
 const DATA_URL = 'https://docs.google.com/spreadsheets/d/1hjhIFVAI4e_q9x0TYYm1GGzy7yrsjzxopq4QNk6g10M/export?format=csv&gid=0';
-const MEMBER_DATA_URL = 'https://docs.google.com/spreadsheets/d/1hjhIFVAI4e_q9x0TYYm1GGzy7yrsjzxopq4QNk6g10M/export?format=csv&gid=1514116026';
+const MEMBER_DATA_URL = 'https://docs.google.com/spreadsheets/d/15JUYc1k9IfqhRuWNWasDjdJPnTUsS25O/export?format=csv&gid=50002661';
 
 const COL = {
   MEMBER_ID: 2,
